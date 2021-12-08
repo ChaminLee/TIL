@@ -55,7 +55,7 @@ func register(_  cellClass: AnyClass?, forCellReuseIdentifier  identifier: Strin
 
 새로운 table cell을 생성하기 위해 `cellClass`, `UINib` 등을 등록하는 역할을 한다. 
 
-어떠한 cell이던 dequeue하기 전에, 새로운 cell들을 어떻게 만드는지 table view에게 알려주기 위해`register` 메서드를 호출해야 한다. 만약 특정 타입의 cell이 재사용 큐에 없을 경우, table view는 제공받은 정보에 기반하여 새로운 cell 객체를 자동으로 만들어준다. 
+어떠한 cell이던 dequeue하기 전에, 새로운 cell들을 어떻게 만드는지 table view에게 알려주기 위해`register` 메서드를 무조건 한 번은 호출해야 한다. 만약 특정 타입의 cell이 재사용 큐에 없을 경우, table view는 제공받은 정보에 기반하여 새로운 cell 객체를 자동으로 만들어준다. 
 
 이전에 동일한 reuse identifier로 등록한 class나 nib 파일이 있는 경우, `cellClass` 파라미터에 지정한 클래스가 이전 객체를 대체한다. `cellClass`에 `nil`을 지정하여 지정된 reuse identifier에서 클래스 등록을 취소할 수도 있다!
 
