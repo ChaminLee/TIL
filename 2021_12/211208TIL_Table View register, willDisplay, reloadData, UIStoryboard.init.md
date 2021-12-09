@@ -19,14 +19,13 @@
 ###  `tableView(_:willDisplay:forRowAt:)`
 
 table view가 delegate에게 특정 행에 대한 cell을 그려야 한다고 알려주는 역할을 한다. 
-
 ```swift
 optional func tableView(_ tableView: UITableView, 
 		willDisplay cell: UITableViewCell, 
 		forRowAt indexPath: IndexPath)
 ```
 
-그려야 한다는 것을 알려주기에, 직접 cell을 그리게 되는 `cellForRowAt`보다 먼저 호출된다. 그리기 전에 delegate는 알림을 받기 때문에 cell 객체를 정의할 수 있다. 그래서 `willDisplay` 메서드가 호출될 때 cell 선택 및 배경색과 같은 table view가 이전에 정한 상태 기반의 특성을 다시 지정할 수 있다.
+cell을 행에 그리기 직전에 수행되기에, 직접 cell을 구성하는 `cellForRowAt`보다 나중에 호출된다. 그리기 직전에 delegate는 알림을 받기 때문에 cell 객체를 수정할 수 있다. 그래서 `willDisplay` 메서드가 호출될 때 cell 선택 및 배경색과 같은 table view가 이전에 정한 상태 기반의 특성을 다시 지정할 수 있다.
 (prefetch 도 함께 알아보기.)
 
 ### `reloadData()`
