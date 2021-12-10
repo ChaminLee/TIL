@@ -19,7 +19,7 @@ Table View 사용을 조금 더 편리하게 해주기 위한 타입이다.
 open class UITableViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
 ```
 
-보다싶이 `UITableViewDelegate`와 `UITableViewDataSource` 프로토콜을 기본적으로 채택하고 있는 것을 알 수 있다. 그 덕분에 table view의 data source와 delegate에 `self`를 넣어줄 수 있다. 
+보다싶이 `UITableViewDelegate`와 `UITableViewDataSource` 프로토콜을 기본적으로 채택하고 있는 것을 알 수 있다. 그리고 자동적으로 table view의 data source와 delegate에 `self`를 넣어준다.
 
 또한 기본적으로 스토리보드나 nib 파일에 보관된 table view를 자동으로 로드한다. 그 덕분에 `tableView` 프로퍼티를 사용하여 table에 접근할 수 있다. 
 
