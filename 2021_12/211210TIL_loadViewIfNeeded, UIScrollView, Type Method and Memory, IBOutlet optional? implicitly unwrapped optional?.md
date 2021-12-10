@@ -1,4 +1,4 @@
-﻿# loadViewIfNeeded, UIScrollView, Type Method and Memory
+# loadViewIfNeeded, UIScrollView, Type Method and Memory, IBOutlet optional? implicitly unwrapped optional?
 
 ## 211210_TIL
 
@@ -49,6 +49,19 @@ View Controller의 view가 아직 로드되지 않았을 때 메모리에 올려
 
 따라서 인스턴스 생성을 피하고 싶다는 이유만으로 타입 메서드를 작성하면 안될 것 같다.  
 
+### 4. `IBOutlet`을 optional로? 암시적 옵셔널 추출로?
+
+IBOutlet은 기본적으로 `!` 암시적 추출 방식으로 생성된다. 편하게 사용하게 만들어주고자 이렇게 제공하는 것 같다. 
+
+하지만 암시적 옵셔널 추출의 경우 무조건 값이 있다고 가정하는 경우에 사용할 수 있다. 하지만 안타깝게도 `IBOutlet`의 값이 `nil`이 될 수 있는 순간이 두 가지 있다. 
+
+- `IBOutlet`이 스토리보드의 UI 요소와 연결되지 않은 경우
+- `IBOutlet`이 속해있는 View Controller의 view가 메모리에 로드 되지 않았는데, 외부에서 `IBOutlet`에 접근할 때
+
+첫 번째의 경우 쉽게 해결할 수 있지만, 두 번째의 경우가 핵심적인 문제에 해당한다. 이 두 가지 경우 모두 앱이 크래쉬되기 때문에 주의하여야 한다고 한다. 
+
+그래서 이 때 `IBOutlet`에 `!`가 아닌 `?`를 붙여서 옵셔널로 사용하는 것이 더 안전하다는 의견이 있다!
+
 ## 고민된 점 
 - util 역할의 타입을 구현하는 방법
 - scrollview와 content layout guide
@@ -66,4 +79,4 @@ View Controller의 view가 아직 로드되지 않았을 때 메모리에 올려
 
 [Step3 리뷰](https://github.com/yagom-academy/ios-exposition-universelle/pull/117#discussion_r766491766)
 
-
+[Should Outlets Be Optionals or Implicitly Unwrapped Optionals](https://cocoacasts.com/should-outlets-be-optionals-or-implicitly-unwrapped-optionals)
