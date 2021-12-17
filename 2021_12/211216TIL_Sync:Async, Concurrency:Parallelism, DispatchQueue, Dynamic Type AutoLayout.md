@@ -278,7 +278,10 @@ override func viewDidLoad() {
 
 자 이제 결과물을 확인해 볼 시간...!
 
-![](https://im2.ezgif.com/tmp/ezgif-2-12800c662c.gif)
+|standard > larger|larger > standard|
+|:---:|:---:|
+|![](https://blog.kakaocdn.net/dn/qkyd0/btroec3FZAE/fSDolKAgyy7bfzqKxje2L1/img.gif)|![](https://blog.kakaocdn.net/dn/E7uTw/btrob8nQ3GK/A1dr8rc0j8qp7SGrvqKAKK/img.gif)|
+
 
 이제 텍스트 크기에 맞게 레이아웃이 자동으로 적용되는 것을 볼 수 있다. 
 
