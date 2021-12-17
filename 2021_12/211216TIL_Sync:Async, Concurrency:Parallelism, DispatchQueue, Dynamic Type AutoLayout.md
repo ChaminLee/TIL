@@ -280,7 +280,10 @@ override func viewDidLoad() {
 
 |standard > larger|larger > standard|
 |:---:|:---:|
-|![](https://blog.kakaocdn.net/dn/qkyd0/btroec3FZAE/fSDolKAgyy7bfzqKxje2L1/img.gif)|![](https://blog.kakaocdn.net/dn/E7uTw/btrob8nQ3GK/A1dr8rc0j8qp7SGrvqKAKK/img.gif)|
+|![dynamic1](https://user-images.githubusercontent.com/45652743/146530902-1aff0b8e-eef8-4a59-8354-c051dbc25ffd.gif)|![dynamic2](https://user-images.githubusercontent.com/45652743/146530957-eb0c47ad-c9d2-4e79-9191-31fd77f66dfa.gif)|
+
+
+
 
 
 이제 텍스트 크기에 맞게 레이아웃이 자동으로 적용되는 것을 볼 수 있다. 
