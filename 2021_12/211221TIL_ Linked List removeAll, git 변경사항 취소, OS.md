@@ -1,4 +1,4 @@
-﻿
+
 
 # Linked List removeAll, git 변경사항 취소, OS
 
@@ -31,54 +31,40 @@ func removeAll() {
 
 N개의 노드를 순회한다는 점에서 시간 복잡도가 `O(n)`이 되겠지만, 메모리 누수가 발생하는 것 보다는 시간이 조금 더 걸리는게 나을 것 같다고 판단했다. 
 
-그래서 아래와 같은 코드로 개선해보았다. 
-> (확실하진 않지만 한 번 생각해봤다...!)
+하지만 생각해보니... head가 사라지면 head.next의 참조가 사라지기 때문에 연쇄적으로 메모리 해제가 될 것으로 생각되어서 deinit을 찍어보았다. 
 
 ```swift
-func removeAll() {
-	while let next = head?.next {
-		head = nil
-		head = next
-	}
-	
-	head = nil
-	tail = nil
+class Node {
+    var value: Element
+    ...
+    
+    deinit {
+        print("\(value) 사라진다")    
+    }
 }
 ```
 
-추가된 부분은 while문으로 다음 노드 여부를 확인하며 head를 계속 이동을 하게 되는데, 이동하기 전에 head를 nil로 만들어서 모든 노드를 순회하며 연결을 끊어주는 역할을 한다. 
+현재 상황을 아래와 같이 가정해보자. 
 
-![](https://i.imgur.com/6FbHQYs.png)
+![](https://i.imgur.com/Cz9Ns2M.png)
 
-3개의 노드로 구성되어있는 Linked list를 생각해보자. 
 
-만약에 처음 방법처럼 head/tail에만 nil을 주게 되면 node2가 메모리에 남게 된다. 
 
-![](https://i.imgur.com/gkcmtzb.png)
 
-하지만 새로 구현한 방법을 사용하는 경우 head에서 출발해서 노드 하나하나의 메모리를 해제해주기 때문에 큰 문제가 없어보인다. 
+여기서 `head = nil`을 하게 되면 아래와 같은 상황이 된다. 
 
-순서를 하나하나 봐보자.
+![](https://i.imgur.com/b3o7lR7.png)
 
-1. `head = nil`
 
-![](https://i.imgur.com/cB5E8BI.png)
+자연스레 참조가 없는 노드는 사라지게 되며 tail만 남게 되는 것이다. 
 
-현재 head를 nil로 만들어준다. 
+![](https://i.imgur.com/yhkFsRh.png)
 
-2. `head = next`
 
-![](https://i.imgur.com/yM0b0X4.png)
+그래서 tail은 따로 `tail = nil`을 주어 삭제하면 정상적으로 모든 노드들이 연쇄적으로 메모리 해제됨을 확인할 수 있다. 
 
-head가 다음으로 이동하게 된다. 그리고 1번을 다시 반복한다. 
+![](https://i.imgur.com/wOXspVc.png)
 
-3. `head = nil`, `tail = nil`
-
-![](https://i.imgur.com/7u58faj.png)
-
-앞의 while문을 다 통과하고 나면 head와 tail이 같아질 것이다. 
-
-그렇게 되면 이제 head와 tail에 모두 nil을 넣어 마지막 노드를 제거하게 되고 모든 노드를 삭제할 수 있게 되는 것 같다. 
 
 ### 2. git 변경사항 취소
 
@@ -111,4 +97,3 @@ head가 다음으로 이동하게 된다. 그리고 1번을 다시 반복한다.
 **Ref**
 
 [git 커밋되지 않았거나 저장되지 않은 모든 변경 사항 취소](https://extbrain.tistory.com/83)
-
