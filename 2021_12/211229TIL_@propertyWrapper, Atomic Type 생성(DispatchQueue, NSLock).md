@@ -257,3 +257,5 @@ struct AtomicArray {
 https://docs.swift.org/swift-book/ReferenceManual/Attributes.htmlhttps://www.onswiftwings.com/posts/atomic-property-wrapper/
 
 https://tomzurkan.medium.com/creating-an-atomic-property-in-swift-988fa55cc71
+
+https://zeddios.tistory.com/1221
