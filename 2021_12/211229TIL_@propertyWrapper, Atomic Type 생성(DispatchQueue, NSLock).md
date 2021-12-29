@@ -11,7 +11,7 @@
 
 ## 학습 내용
 
-### `@propertyWrapper`란?
+### 1. `@propertyWrapper`란?
 
 단어 의미 그대로 속성을 덮는다...?라는 뜻을 가지는 것 같다. 차차보면 알겠지만.. "프로퍼티에 특정 기능을 부여해준다" 라고 이해해봐도 좋을 것 같다. 
 
@@ -171,7 +171,7 @@ struct Rounded {
 
 Generics를 함께 사용해서 property wrapper를 만드는데, 내부 동작을 serial queue에서 동기적으로 처리해주거나, `NSLock`을 활용하여 lock/unlock 해주는 방식이다. 
 
-#### property wrapper를 활용한 Atomic(thread-safe) 타입 생성
+### 2. `@propertyWrapper`를 활용한 Atomic(thread-safe) 타입 생성
 
 > 1 . DispatchQueue 사용
 ```swift
