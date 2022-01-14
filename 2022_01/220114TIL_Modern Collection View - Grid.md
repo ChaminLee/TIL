@@ -1,4 +1,4 @@
-﻿# 
+# Modern Collection View - Grid
 
 ## 220114_TIL
 
@@ -10,9 +10,7 @@
 
 ## 학습 내용
 
-### modern CollectionView - Grid 
-
-# Modern Collection View - Grid 구현
+### Modern Collection View - Grid 구현
 
 앞선 글([[iOS] Modern Collection View - List 구현](https://leechamin.tistory.com/555#Modern%--Collection%--View%--%EA%B-%AC%ED%--%--))에서는 collection View를 활용하여 list 형태의 뷰를 구현하는 방식을 봤었다. 이제는 원래 collection View의 목적이라고도 할 수 있는(?) grid(격자)형태의 뷰를 구성해보자.
 (List 형태를 구현할 때와 코드가 거의 유사하니 이전 글을 참고해도 좋을 것 같다.)
