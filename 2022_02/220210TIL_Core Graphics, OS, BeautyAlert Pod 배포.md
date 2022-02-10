@@ -1,4 +1,4 @@
-﻿# Core Graphics, OS
+# Core Graphics, OS, BeautyAlert Pod 배포
 
 ## 220210_TIL
 
@@ -107,6 +107,17 @@ UIView.animate(withDuration: 0.2) {
 
 [Memory Management 3](https://github.com/ChaminLee/CS_Study/blob/main/OS/20.%20Memory%20Management%203.md)
 
+### 3. BeautyAlert Pod 배포
+
+재미삼아 만들었던 BeautyAlert를 배포하였다! 
+
+![](https://i.imgur.com/vmfzZZd.png)
+
+기능을 더 추가해보려다가, 시간적 여유가 되지 않아 이 정도에서만 마무리하고, 다음번에 조금 더 완성도 있는 라이브러리를 구현해보면 좋겠다는 생각을 했다. 
+
+[BeautyAlert](https://github.com/ChaminLee/BeautyAlert)
+
+나라도 편리하게 사용하면 좋을 것 같다! 
 ## 고민된 점 
 - 진정한 커스텀뷰란?
 - UI요소를 회전시키는 방법
@@ -121,4 +132,3 @@ UIView.animate(withDuration: 0.2) {
 야곰의 활동학습 
 
 https://github.com/ChaminLee/CS_Study/blob/main/OS/20.%20Memory%20Management%203.md
-
